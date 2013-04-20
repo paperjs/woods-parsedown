@@ -1,11 +1,15 @@
 module.exports = parse;
 
 function parse(text) {
-	var pieces = text.split(/---(?:\n)*|\n/),
+	var pieces = text.split(/\n/),
 		results = {},
 		lastKey = null;
 	for (var i = 0; i < pieces.length; i++) {
 		var piece = pieces[i] || '';
+		if (piece == '---') {
+			lastKey = null;
+			continue;
+		}
 		var matches = piece.match(/(^[a-zA-Z0-9_]+)\:(?:[\s\n])*(.+|$)$/m);
 		if (matches && matches.length == 3) {
 			lastKey = matches[1];

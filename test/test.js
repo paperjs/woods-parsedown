@@ -61,8 +61,9 @@ describe('Properties', function() {
 	});
 
 	it('should remove --- dividers', function() {
-		var param = parsedown('---');
-		expect(param.content).to.equal('');
+		var param = parsedown('first: value1\n---\nsecond:value2');
+		expect(param.first).to.equal('value1');
+		expect(param.second).to.equal('value2');
 	});
 
 	it('should swallow line breaks after --- dividers', function() {
@@ -99,4 +100,10 @@ describe('Properties', function() {
 		expect(param.content).to.equal(' test:test');
 	});
 
+
+	it('lastKey should be nullified after --- divider, leading to next content without a property name to be placed inside content', function() {
+		var param = parsedown('test:test\n---\nblabla');
+		expect(param['test']).to.equal('test');
+		expect(param.content).to.equal('blabla');
+	});
 });
