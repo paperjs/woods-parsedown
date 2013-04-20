@@ -1,5 +1,5 @@
 {
-  "name": "parsedown",
+  "name": "woods-parsedown",
   "version": "0.0.1",
   "main": "index.js",
   "devDependencies": {},
@@ -9,5 +9,9 @@
 	  "chai": "*",
 	  "mocha": "*",
 	  "superagent": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studiomoniker/woods-parsedown.git"
   }
 }
