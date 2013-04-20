@@ -16,14 +16,11 @@ function parse(text) {
 			results[lastKey] = matches[2];
 		} else {
 			if (!lastKey) {
-				if (results.content) {
-					results.content += piece;
-				} else {
-					results.content = piece;
-				}
-			} else {
-				results[lastKey] += (results[lastKey].length ? '\n' : '') + piece;
+				lastKey = 'content';
+				if (!results.content)
+					results.content = '';
 			}
+			results[lastKey] += (results[lastKey].length ? '\n' : '') + piece;
 		}
 	}
 	return results;
