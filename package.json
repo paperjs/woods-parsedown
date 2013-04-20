@@ -1,0 +1,13 @@
+{
+  "name": "parsedown",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "Jonathan Puckey",
+  "license": "MIT",
+  "devDependencies": {
+	  "chai": "*",
+	  "mocha": "*",
+	  "superagent": "*"
+  }
+}
