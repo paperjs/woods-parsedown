@@ -29,9 +29,9 @@ describe('Properties', function() {
 		expect(param.test).to.equal('test test\ntest');
 	});
 
-	it('should preserve trailing linebreaks', function() {
-		var param = parsedown('test:test test\n');
-		expect(param.test).to.equal('test test\n');
+	it('should remove trailing linebreaks', function() {
+		var param = parsedown('test: test test\n');
+		expect(param.test).to.equal('test test');
 	});
 
 	it('should preserve double linebreaks', function() {
