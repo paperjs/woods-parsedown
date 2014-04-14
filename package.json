@@ -1,8 +1,8 @@
 {
   "name": "woods-parsedown",
-  "version": "0.0.2",
+  "description": "Woods Parsedown",
+  "version": "0.0.3",
   "main": "index.js",
-  "devDependencies": {},
   "author": "Jonathan Puckey",
   "license": "MIT",
   "devDependencies": {
@@ -13,5 +13,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/studiomoniker/woods-parsedown.git"
+  },
+  "scripts": {
+    "test": "mocha ./test/test.js"
   }
 }
